@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Speed : MonoBehaviour
 {
+    // to bedzie mapa i taki wektor w 3d za pomoca LineRenderer
     public Rigidbody m_rb;
     TextMeshProUGUI m_text;
     void Start()

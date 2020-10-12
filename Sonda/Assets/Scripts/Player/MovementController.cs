@@ -8,14 +8,20 @@ public class MovementController : MonoBehaviour
     //wyzwanie: mozesz uzywac tylko jednego typu silnikow manewrowych tzn. np. Q i E, musisz odpowiednio dopasowac sie do figury
     //gdy obracamy kamera przyciski sa wylaczaone
     //usunac stabilise bo jest angular drag wiec 
-    Rigidbody m_rb;
+    //zanim nie opanujemy sondy nie bedziemy w stanie wyhamowac 
+    private Rigidbody m_rb;
     public float m_verticalTorque = 10f;
     public float m_horizontalTorque = 10f;
     public float m_rotateTorque = 10f;
+    public float m_mainEngine = 100f;
     private void Awake()
     {
         m_rb = GetComponent<Rigidbody>();
-        m_rb.maxAngularVelocity = 20f;
+        //m_rb.maxAngularVelocity = 20f;
+        
+        m_rb.angularDrag = 0f;
+        m_rb.AddTorque(transform.forward * m_rotateTorque * 8f,ForceMode.Impulse);
+        m_rb.AddTorque(transform.up * m_rotateTorque * 12f, ForceMode.Impulse);
     }
     void Start()
     {
@@ -63,7 +69,7 @@ public class MovementController : MonoBehaviour
     private void Engine()//osiagniecie max zniszczy statek
     {
         if (m_rb.velocity.magnitude < 5f)
-            m_rb.AddForce(transform.forward * m_verticalTorque * 5f);
+            m_rb.AddForce(transform.forward * m_mainEngine);
         else
             LimitVelocity();
     }
