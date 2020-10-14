@@ -14,6 +14,7 @@ public class CameraController : MonoBehaviour
     private float yAngle;
     public Vector2 m_Speed;
     bool m_moving = false;
+    float m_idleTime = 0f;
 
     // Start is called before the first frame update
     void Awake()
@@ -28,7 +29,7 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.touchCount > 0 && m_moving)
+        if (Input.touchCount > 0 && m_moving && m_idleTime<.5f)
         {
             if (Input.GetTouch(0).phase == TouchPhase.Began)
             {
@@ -49,6 +50,15 @@ public class CameraController : MonoBehaviour
                 m_freeLook.m_XAxis.Value = xAngle;
 
             }
+            if (Input.GetTouch(0).phase == TouchPhase.Stationary)
+            {
+                m_idleTime += Time.deltaTime;
+            }
+        }
+        else if (m_idleTime >= 0.5f)
+        {
+            m_idleTime = 0f;
+
         }
     }
 

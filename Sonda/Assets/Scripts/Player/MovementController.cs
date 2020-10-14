@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MovementController : MonoBehaviour
 {
@@ -9,19 +11,21 @@ public class MovementController : MonoBehaviour
     //gdy obracamy kamera przyciski sa wylaczaone
     //usunac stabilise bo jest angular drag wiec 
     //zanim nie opanujemy sondy nie bedziemy w stanie wyhamowac 
+    //dac mozliwosc stalego napedu
     private Rigidbody m_rb;
     public float m_verticalTorque = 10f;
     public float m_horizontalTorque = 10f;
     public float m_rotateTorque = 10f;
     public float m_mainEngine = 100f;
+    public Action activeEngines;
     private void Awake()
     {
         m_rb = GetComponent<Rigidbody>();
         //m_rb.maxAngularVelocity = 20f;
-        
-        m_rb.angularDrag = 0f;
+
+        /*m_rb.angularDrag = 0f;
         m_rb.AddTorque(transform.forward * m_rotateTorque * 8f,ForceMode.Impulse);
-        m_rb.AddTorque(transform.up * m_rotateTorque * 12f, ForceMode.Impulse);
+        m_rb.AddTorque(transform.up * m_rotateTorque * 12f, ForceMode.Impulse);*/
     }
     void Start()
     {
@@ -39,7 +43,7 @@ public class MovementController : MonoBehaviour
         if (Input.GetKey(KeyCode.E))
             m_rb.AddTorque(transform.forward * m_rotateTorque * -1f);
         m_rb.angularVelocity = new Vector3(Mathf.Round(m_rb.angularVelocity.x * 1000) / 1000f, Mathf.Round(m_rb.angularVelocity.y * 1000) / 1000f, Mathf.Round(m_rb.angularVelocity.z * 1000) / 1000f);
-        Debug.Log("x:" + m_rb.angularVelocity.x + "     y:" + m_rb.angularVelocity.y + "    z:" + m_rb.angularVelocity.z + "     RotatationSpeed:" + m_rb.angularVelocity.magnitude + "  velocity:" + m_rb.velocity.magnitude);
+        //Debug.Log("x:" + m_rb.angularVelocity.x + "     y:" + m_rb.angularVelocity.y + "    z:" + m_rb.angularVelocity.z + "     RotatationSpeed:" + m_rb.angularVelocity.magnitude + "  velocity:" + m_rb.velocity.magnitude);
         if (Input.GetKey(KeyCode.Space))
         {
             Stablilise();
@@ -51,11 +55,8 @@ public class MovementController : MonoBehaviour
             //LimitVelocity();
         }
 
-    }
+        activeEngines?.Invoke();
 
-    private void LateUpdate()
-    {
-        
     }
 
     private void Stablilise()
@@ -80,42 +81,101 @@ public class MovementController : MonoBehaviour
             m_rb.velocity = Vector3.ClampMagnitude(m_rb.velocity, 4.9f);
     }
 
-    public void Forward()
+    private void Forward()
     {
         m_rb.AddTorque(transform.right * m_verticalTorque * 1f);
     }
 
-    public void Back()
+    private void Back()
     {
         m_rb.AddTorque(transform.right * m_verticalTorque * -1f);
     }
 
-    public void Right()
+    private void Right()
     {
         m_rb.AddTorque(transform.up * m_horizontalTorque * -1f);
     }
-    public void Left()
+    private void Left()
     {
         m_rb.AddTorque(transform.up * m_horizontalTorque * 1f);
     }
 
-    public void LRotate()
+    private void LRotate()
     {
         m_rb.AddTorque(transform.forward * m_rotateTorque * 1f);
     }
 
-    public void RRotate()
+    private void RRotate()
     {
         m_rb.AddTorque(transform.forward * m_rotateTorque * -1f);
     }
 
-    public void StabliliseBtn()
+    public void EngineDown()
     {
-            Stablilise(); 
+        activeEngines += Engine;
+    }
+    public void EngineUp()
+    {
+        activeEngines -= Engine;
     }
 
-    public void EngineBtn()
+    public void FowardDown()
     {
-        Engine();
+        activeEngines += Forward;
+    }
+
+    public void ForwardUp()
+    {
+        activeEngines -= Forward;
+    }
+
+    public void BackDown()
+    {
+        activeEngines += Back;
+    }
+
+    public void BackUp()
+    {
+        activeEngines -= Back;
+    }
+
+    public void RightDown()
+    {
+        activeEngines += Right;
+    }
+
+    public void RightUp()
+    {
+        activeEngines -= Right;
+    }
+
+    public void LeftDown()
+    {
+        activeEngines += Left;
+    }
+
+    public void LeftUp()
+    {
+        activeEngines -= Left;
+    }
+
+    public void RightRotateDown()
+    {
+        activeEngines += RRotate;
+    }
+
+    public void RightRotateUp()
+    {
+        activeEngines -= RRotate;
+    }
+
+    public void LeftRotateDown()
+    {
+        activeEngines += LRotate;
+    }
+
+    public void LeftRotateUp()
+    {
+        activeEngines -= LRotate;
     }
 }
