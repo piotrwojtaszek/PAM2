@@ -13,7 +13,7 @@ public class CameraController : MonoBehaviour
     private float xAngle;
     private float yAngle;
     public Vector2 m_Speed;
-    bool m_moving = false;
+    public bool m_moving = false;
     float m_idleTime = 0f;
 
     // Start is called before the first frame update
@@ -29,7 +29,7 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.touchCount > 0 && m_moving && m_idleTime<.5f)
+        if (Input.touchCount > 0 && m_moving)
         {
             if (Input.GetTouch(0).phase == TouchPhase.Began)
             {
@@ -42,24 +42,24 @@ public class CameraController : MonoBehaviour
             {
                 secondpoint = Input.GetTouch(0).position;
                 //Mainly, about rotate camera. For example, for Screen.width rotate on 180 degree
-                xAngle = (secondpoint.x - firstpoint.x) / Screen.width * m_Speed.x;
+                xAngle = xAngTemp + (secondpoint.x - firstpoint.x) / Screen.width * m_Speed.x;
                 yAngle = yAngTemp - (secondpoint.y - firstpoint.y) / Screen.height * m_Speed.y;
                 //Rotate camera
                 //Debug.Log(yAngle + "  x:" + xAngle);
                 m_freeLook.m_YAxis.Value = yAngle;
                 m_freeLook.m_XAxis.Value = xAngle;
+                xAngTemp -= xAngle;
+
 
             }
-            if (Input.GetTouch(0).phase == TouchPhase.Stationary)
+            else
             {
-                m_idleTime += Time.deltaTime;
+                //m_freeLook.m_XAxis.Value = 0f;
+
+                //m_idleTime += Time.deltaTime;
             }
         }
-        else if (m_idleTime >= 0.5f)
-        {
-            m_idleTime = 0f;
 
-        }
     }
 
     public void CameraMode()

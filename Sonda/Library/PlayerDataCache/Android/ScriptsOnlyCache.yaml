@@ -175,61 +175,61 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13514}
     - Class: 114
-      Script: {instanceID: 13656}
+      Script: {instanceID: 13638}
     - Class: 114
-      Script: {instanceID: 13718}
+      Script: {instanceID: 13658}
     - Class: 114
-      Script: {instanceID: 13722}
+      Script: {instanceID: 13720}
     - Class: 114
-      Script: {instanceID: 13740}
+      Script: {instanceID: 13724}
     - Class: 114
-      Script: {instanceID: 13746}
+      Script: {instanceID: 13742}
     - Class: 114
-      Script: {instanceID: 13836}
+      Script: {instanceID: 13748}
     - Class: 114
-      Script: {instanceID: 13874}
+      Script: {instanceID: 13838}
     - Class: 114
-      Script: {instanceID: 13904}
+      Script: {instanceID: 13876}
     - Class: 114
-      Script: {instanceID: 13912}
+      Script: {instanceID: 13906}
     - Class: 114
-      Script: {instanceID: 13922}
+      Script: {instanceID: 13914}
     - Class: 114
-      Script: {instanceID: 14134}
+      Script: {instanceID: 13924}
     - Class: 114
-      Script: {instanceID: 14242}
+      Script: {instanceID: 14136}
     - Class: 114
-      Script: {instanceID: 14308}
+      Script: {instanceID: 14244}
     - Class: 114
-      Script: {instanceID: 14328}
+      Script: {instanceID: 14310}
     - Class: 114
-      Script: {instanceID: 14544}
+      Script: {instanceID: 14330}
     - Class: 114
-      Script: {instanceID: 14586}
+      Script: {instanceID: 14546}
     - Class: 114
-      Script: {instanceID: 14592}
+      Script: {instanceID: 14588}
     - Class: 114
-      Script: {instanceID: 14726}
+      Script: {instanceID: 14594}
     - Class: 114
-      Script: {instanceID: 14772}
+      Script: {instanceID: 14728}
     - Class: 114
-      Script: {instanceID: 14916}
+      Script: {instanceID: 14774}
     - Class: 114
-      Script: {instanceID: 14946}
+      Script: {instanceID: 14918}
     - Class: 114
-      Script: {instanceID: 14966}
+      Script: {instanceID: 14948}
     - Class: 114
       Script: {instanceID: 14968}
     - Class: 114
-      Script: {instanceID: 15000}
+      Script: {instanceID: 14970}
     - Class: 114
-      Script: {instanceID: 15024}
+      Script: {instanceID: 15002}
     - Class: 114
-      Script: {instanceID: 15138}
+      Script: {instanceID: 15026}
     - Class: 114
-      Script: {instanceID: 15144}
+      Script: {instanceID: 15140}
     - Class: 114
-      Script: {instanceID: 25100}
+      Script: {instanceID: 15146}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -649,7 +649,7 @@ ScriptsOnlyBuild:
     className: CinemachinePOV
   - hash:
       serializedVersion: 2
-      Hash: 040493f2c784f9ab7b73739cafe9fc42
+      Hash: 86d7b886bb6dbd802a4774667e2fb820
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CameraController
@@ -853,6 +853,12 @@ ScriptsOnlyBuild:
     className: CinemachineBlendListCamera
   - hash:
       serializedVersion: 2
+      Hash: d9dfa857ed51afc06eb660c46214c958
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UILongButtonHolder
+  - hash:
+      serializedVersion: 2
       Hash: 36025d42bf23fda83a55bf1429201821
     assemblyName: Unity.RenderPipelines.Core.Runtime.dll
     namespaceName: UnityEngine.Rendering.UI
@@ -973,7 +979,7 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerButton
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 2ab905d8f5cec2bee8ffa4056996df84
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerPointFollower
@@ -1063,7 +1069,7 @@ ScriptsOnlyBuild:
     className: CinemachineSmoothPath
   - hash:
       serializedVersion: 2
-      Hash: 801fabc889388890d0ad260facf16c8e
+      Hash: ddc5a0d4f23f14ded4cee84ceadf8c28
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MovementController
@@ -1319,12 +1325,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: d9dfa857ed51afc06eb660c46214c958
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: UILongButtonHolder
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
