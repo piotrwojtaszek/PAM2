@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    CinemachineFreeLook m_freeLook;
+    private CinemachineFreeLook m_freeLook;
+    [SerializeField]
+    private CinemachineVirtualCamera m_followCamera;
     private Vector2 firstpoint;
     private float xAngTemp;
     private float yAngTemp;
@@ -14,7 +16,7 @@ public class CameraController : MonoBehaviour
     private float yAngle;
     public Vector2 m_Speed;
     public bool m_moving = false;
-    float m_idleTime = 0f;
+    private float m_idleTime = 0f;
 
     // Start is called before the first frame update
     void Awake()
@@ -24,6 +26,7 @@ public class CameraController : MonoBehaviour
         //m_freeLook.m_XAxis.Value = 0.8f;
         xAngle = 0.0f;
         yAngle = m_freeLook.m_YAxis.Value;
+        m_freeLook.Priority = 100;
     }
 
     // Update is called once per frame
@@ -58,6 +61,16 @@ public class CameraController : MonoBehaviour
 
                 //m_idleTime += Time.deltaTime;
             }
+        }
+        if (m_moving)
+        {
+            m_freeLook.Priority = 100;
+            m_followCamera.Priority = 1;
+        }
+        else
+        {
+            m_freeLook.Priority = 1;
+            m_followCamera.Priority = 100;
         }
 
     }

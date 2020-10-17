@@ -4056,7 +4056,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 40
+    FieldOfView: 70
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -4272,7 +4272,7 @@ MonoBehaviour:
     m_MaxSpeed: 300
     m_AccelTime: 0.1
     m_DecelTime: 0.1
-    m_InputAxisName: 
+    m_InputAxisName: Mouse X
     m_InputAxisValue: 0
     m_InvertInput: 0
     m_MinValue: -180
@@ -4513,7 +4513,7 @@ MonoBehaviour:
     m_MaxSpeed: 300
     m_AccelTime: 0.1
     m_DecelTime: 0.1
-    m_InputAxisName: 
+    m_InputAxisName: Mouse X
     m_InputAxisValue: 0
     m_InvertInput: 0
     m_MinValue: -180
@@ -4868,7 +4868,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 40
+    FieldOfView: 70
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -4889,7 +4889,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 595570621}
-  m_LocalRotation: {x: 0.036323562, y: 0.008726723, z: 0.00031720672, w: -0.99930197}
+  m_LocalRotation: {x: 0.06950958, y: 0.008711345, z: 0.0006070129, w: -0.9975431}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5038,7 +5038,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 40
+    FieldOfView: 70
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -5059,7 +5059,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 613346019}
-  m_LocalRotation: {x: 0.018188795, y: 0.008731023, z: 0.00015886546, w: -0.99979645}
+  m_LocalRotation: {x: 0.03494488, y: 0.008727152, z: 0.0003051936, w: -0.99935114}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5600,7 +5600,7 @@ MonoBehaviour:
     m_MaxSpeed: 300
     m_AccelTime: 0.1
     m_DecelTime: 0.1
-    m_InputAxisName: 
+    m_InputAxisName: Mouse X
     m_InputAxisValue: 0
     m_InvertInput: 0
     m_MinValue: -180
@@ -6016,8 +6016,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -6073,13 +6073,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.39553884, y: 0.5074106, z: -0.12064774, w: 0.75599456}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 46.095, y: 75.625, z: 18.408}
 --- !u!1 &719300303 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7787244958541230585, guid: daa8f479445443848804ed6f7e9b8a05,
@@ -7574,7 +7574,7 @@ Camera:
     height: 1
   near clip plane: 2
   far clip plane: 300
-  field of view: 40
+  field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -9360,12 +9360,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BindingMode: 3
   m_FollowOffset: {x: 0, y: 0, z: -6}
-  m_XDamping: 1
-  m_YDamping: 1
-  m_ZDamping: 0
+  m_XDamping: 5
+  m_YDamping: 5
+  m_ZDamping: 3
   m_AngularDampingMode: 0
-  m_PitchDamping: 1
-  m_YawDamping: 1
+  m_PitchDamping: 5
+  m_YawDamping: 5
   m_RollDamping: 5
   m_AngularDamping: 0
 --- !u!114 &1177176845
@@ -9795,6 +9795,90 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Meteor (20)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7b4a8c7af2d8cfd418c046876b071884, type: 3}
+--- !u!1001 &1282709047
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1538695376}
+    m_Modifications:
+    - target: {fileID: 1932363734809909163, guid: 7b4a8c7af2d8cfd418c046876b071884,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1932363734809909163, guid: 7b4a8c7af2d8cfd418c046876b071884,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.982314
+      objectReference: {fileID: 0}
+    - target: {fileID: 1932363734809909163, guid: 7b4a8c7af2d8cfd418c046876b071884,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 71.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1932363734809909163, guid: 7b4a8c7af2d8cfd418c046876b071884,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.87052244
+      objectReference: {fileID: 0}
+    - target: {fileID: 1932363734809909163, guid: 7b4a8c7af2d8cfd418c046876b071884,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.37645972
+      objectReference: {fileID: 0}
+    - target: {fileID: 1932363734809909163, guid: 7b4a8c7af2d8cfd418c046876b071884,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.29401866
+      objectReference: {fileID: 0}
+    - target: {fileID: 1932363734809909163, guid: 7b4a8c7af2d8cfd418c046876b071884,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.1184139
+      objectReference: {fileID: 0}
+    - target: {fileID: 1932363734809909163, guid: 7b4a8c7af2d8cfd418c046876b071884,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 129
+      objectReference: {fileID: 0}
+    - target: {fileID: 1932363734809909163, guid: 7b4a8c7af2d8cfd418c046876b071884,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -0.87100005
+      objectReference: {fileID: 0}
+    - target: {fileID: 1932363734809909163, guid: 7b4a8c7af2d8cfd418c046876b071884,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -216.95099
+      objectReference: {fileID: 0}
+    - target: {fileID: 1932363734809909163, guid: 7b4a8c7af2d8cfd418c046876b071884,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -226.48099
+      objectReference: {fileID: 0}
+    - target: {fileID: 1932363734809909163, guid: 7b4a8c7af2d8cfd418c046876b071884,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1932363734809909163, guid: 7b4a8c7af2d8cfd418c046876b071884,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1932363734809909163, guid: 7b4a8c7af2d8cfd418c046876b071884,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4723548257823226986, guid: 7b4a8c7af2d8cfd418c046876b071884,
+        type: 3}
+      propertyPath: m_Name
+      value: Meteor (130)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b4a8c7af2d8cfd418c046876b071884, type: 3}
@@ -11712,6 +11796,7 @@ Transform:
   - {fileID: 1145150378}
   - {fileID: 848313879}
   - {fileID: 1351360136}
+  - {fileID: 1598372974}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12048,6 +12133,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b4a8c7af2d8cfd418c046876b071884, type: 3}
+--- !u!4 &1598372974 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1932363734809909163, guid: 7b4a8c7af2d8cfd418c046876b071884,
+    type: 3}
+  m_PrefabInstance: {fileID: 1282709047}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1601481634
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14449,7 +14540,7 @@ MonoBehaviour:
   m_Follow: {fileID: 401681139}
   m_CommonLens: 1
   m_Lens:
-    FieldOfView: 40
+    FieldOfView: 70
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -14467,7 +14558,7 @@ MonoBehaviour:
     m_MaxSpeed: 2
     m_AccelTime: 0.2
     m_DecelTime: 0.1
-    m_InputAxisName: 
+    m_InputAxisName: Mouse Y
     m_InputAxisValue: 0
     m_InvertInput: 0
     m_MinValue: 0
@@ -14490,7 +14581,7 @@ MonoBehaviour:
     m_MaxSpeed: 300
     m_AccelTime: 0.1
     m_DecelTime: 0.1
-    m_InputAxisName: 
+    m_InputAxisName: Mouse X
     m_InputAxisValue: 0
     m_InvertInput: 0
     m_MinValue: -180
@@ -14515,11 +14606,11 @@ MonoBehaviour:
   m_BindingMode: 5
   m_SplineCurvature: 1
   m_Orbits:
-  - m_Height: 5
+  - m_Height: 6
     m_Radius: 5
   - m_Height: 0
     m_Radius: 10
-  - m_Height: -5
+  - m_Height: -6
     m_Radius: 5
   m_LegacyHeadingBias: 3.4028235e+38
   m_Rigs:
@@ -14555,6 +14646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbe3c2c55d2291346b9c66eab4c2f8cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_followCamera: {fileID: 1953673968}
   m_Speed: {x: 120, y: 1}
   m_moving: 1
 --- !u!4 &1896864842 stripped
@@ -14877,7 +14969,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 401681139}
   m_Follow: {fileID: 401681139}
   m_Lens:
-    FieldOfView: 40
+    FieldOfView: 60
     OrthographicSize: 10
     NearClipPlane: 2
     FarClipPlane: 300
