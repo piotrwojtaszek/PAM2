@@ -11,12 +11,15 @@ public class MovementController : MonoBehaviour
     //gdy obracamy kamera przyciski sa wylaczaone
     //usunac stabilise bo jest angular drag wiec 
     //zanim nie opanujemy sondy nie bedziemy w stanie wyhamowac 
+    //pousuwac rigidbody z meteorow, i dawac je dopiero gdy gracz jest w poblizu
     //dac mozliwosc stalego napedu
     private Rigidbody m_rb;
     public float m_verticalTorque = 10f;
     public float m_horizontalTorque = 10f;
     public float m_rotateTorque = 10f;
     public float m_mainEngine = 100f;
+
+    public bool m_mainEngineOn { get; protected set; } = false;
     public Action activeEngines;
     public bool m_invertControlls = false;
     float m_invertVariable = 1f;
@@ -110,10 +113,12 @@ public class MovementController : MonoBehaviour
 
     public void EngineDown()
     {
+        m_mainEngineOn = true;
         activeEngines += Engine;
     }
     public void EngineUp()
     {
+        m_mainEngineOn = false;
         activeEngines -= Engine;
     }
 
