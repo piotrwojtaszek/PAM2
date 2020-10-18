@@ -30,8 +30,8 @@ public class ParticleSystemController : MonoBehaviour
         while (m_movement.m_mainEngineOn)
         {
             Debug.Log("Partcles");
-            GameObject particle = Instantiate(m_particlePrefab);
-            particle.transform.position = m_mainEngine.position;
+            Instantiate(m_particlePrefab,m_mainEngine);
+
 
             yield return new WaitForSeconds(0.2f);
         }

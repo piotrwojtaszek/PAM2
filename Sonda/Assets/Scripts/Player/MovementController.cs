@@ -166,22 +166,22 @@ public class MovementController : MonoBehaviour
 
     public void RightRotateDown()
     {
-        activeEngines += RRotate;
+        activeEngines += LRotate;
     }
 
     public void RightRotateUp()
     {
-        activeEngines -= RRotate;
+        activeEngines -= LRotate;
     }
 
     public void LeftRotateDown()
     {
-        activeEngines += LRotate;
+        activeEngines += RRotate;
     }
 
     public void LeftRotateUp()
     {
-        activeEngines -= LRotate;
+        activeEngines -= RRotate;
     }
 
     void PcInputHandler()
