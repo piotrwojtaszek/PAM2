@@ -19,7 +19,6 @@ public class MovementController : MonoBehaviour
     public float m_rotateTorque = 10f;
     public float m_mainEngine = 100f;
 
-    public bool m_mainEngineOn { get; protected set; } = false;
     public Action activeEngines;
     public bool m_invertControlls = false;
     float m_invertVariable = 1f;
@@ -48,16 +47,12 @@ public class MovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         PcInputHandler();
 
         m_rb.angularVelocity = new Vector3(Mathf.Round(m_rb.angularVelocity.x * 1000) / 1000f, Mathf.Round(m_rb.angularVelocity.y * 1000) / 1000f, Mathf.Round(m_rb.angularVelocity.z * 1000) / 1000f);
         //Debug.Log("x:" + m_rb.angularVelocity.x + "     y:" + m_rb.angularVelocity.y + "    z:" + m_rb.angularVelocity.z + "     RotatationSpeed:" + m_rb.angularVelocity.magnitude + "  velocity:" + m_rb.velocity.magnitude);
 
-
-
         activeEngines?.Invoke();
-
     }
 
     private void Stablilise()
@@ -70,7 +65,7 @@ public class MovementController : MonoBehaviour
 
     private void Engine()//osiagniecie max zniszczy statek
     {
-        if (m_rb.velocity.magnitude < 5f)
+        if (m_rb.velocity.magnitude < 5.5f)
             m_rb.AddForce(transform.forward * m_mainEngine);
         else
             LimitVelocity();
@@ -78,8 +73,8 @@ public class MovementController : MonoBehaviour
 
     private void LimitVelocity()
     {
-        if (m_rb.velocity.magnitude >= 5f)
-            m_rb.velocity = Vector3.ClampMagnitude(m_rb.velocity, 4.9f);
+        if (m_rb.velocity.magnitude >= 5.5f)
+            m_rb.velocity = Vector3.ClampMagnitude(m_rb.velocity, 5.49f);
     }
 
     private void Forward()
@@ -113,24 +108,20 @@ public class MovementController : MonoBehaviour
 
     public void EngineDown()
     {
-        m_mainEngineOn = true;
         activeEngines += Engine;
     }
     public void EngineUp()
     {
-        m_mainEngineOn = false;
         activeEngines -= Engine;
     }
 
     public void FowardDown()
     {
-        Debug.LogWarning("Down");
         activeEngines += Forward;
     }
 
     public void ForwardUp()
     {
-        Debug.LogWarning("UP");
         activeEngines -= Forward;
     }
 
