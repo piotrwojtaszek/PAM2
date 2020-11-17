@@ -10,6 +10,7 @@ public class CameraController : MonoBehaviour
     private CinemachineVirtualCamera m_followCamera;
     private Vector2 firstpoint;
     private float xAngTemp;
+    [SerializeField]
     private float yAngTemp;
     private Vector2 secondpoint;
     private float xAngle;
@@ -19,7 +20,7 @@ public class CameraController : MonoBehaviour
     private float m_idleTime = 0f;
 
     // Start is called before the first frame update
-    void Awake()
+    private void Awake()
     {
         m_freeLook = GetComponent<CinemachineFreeLook>();
         //m_freeLook.m_YAxis.Value = 0.8f;
@@ -30,7 +31,7 @@ public class CameraController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Input.touchCount > 0 && m_moving)
         {
@@ -72,6 +73,7 @@ public class CameraController : MonoBehaviour
             m_freeLook.Priority = 1;
             m_followCamera.Priority = 100;
         }
+        yAngTemp = Mathf.Clamp(yAngTemp, 0f, 1f);
 
     }
 

@@ -18,16 +18,19 @@ public class MovementController : MonoBehaviour
     public float m_horizontalTorque = 10f;
     public float m_rotateTorque = 10f;
     public float m_mainEngine = 100f;
-
+    public Joystick joystick;
     public Action activeEngines;
     public bool m_invertControlls = false;
-    float m_invertVariable = 1f;
+    private float m_invertVariable = 1f;
+
+    private float horizontal = 0f;
+    private float vertical = 0f;
     private void Awake()
     {
         m_rb = GetComponent<Rigidbody>();
-        if(m_invertControlls)
+        if (m_invertControlls)
         {
-            m_invertVariable= 1f;
+            m_invertVariable = 1f;
         }
         else
         {
@@ -39,18 +42,38 @@ public class MovementController : MonoBehaviour
         m_rb.AddTorque(transform.forward * m_rotateTorque * 8f,ForceMode.Impulse);
         m_rb.AddTorque(transform.up * m_rotateTorque * 12f, ForceMode.Impulse);*/
     }
-    void Start()
+
+    private void Start()
     {
 
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         PcInputHandler();
 
         m_rb.angularVelocity = new Vector3(Mathf.Round(m_rb.angularVelocity.x * 1000) / 1000f, Mathf.Round(m_rb.angularVelocity.y * 1000) / 1000f, Mathf.Round(m_rb.angularVelocity.z * 1000) / 1000f);
         //Debug.Log("x:" + m_rb.angularVelocity.x + "     y:" + m_rb.angularVelocity.y + "    z:" + m_rb.angularVelocity.z + "     RotatationSpeed:" + m_rb.angularVelocity.magnitude + "  velocity:" + m_rb.velocity.magnitude);
+
+        horizontal = joystick.Horizontal;
+        vertical = joystick.Vertical;
+
+        //vertical movement
+        m_rb.AddTorque(transform.right * m_verticalTorque * vertical * m_invertVariable);
+
+        //vertical movement
+        m_rb.AddTorque(transform.up * m_horizontalTorque * horizontal * -1f * m_invertVariable);
+
+        if (Input.acceleration.x > .15f)
+        {
+            m_rb.AddTorque(transform.forward * m_rotateTorque * 1f * m_invertVariable);
+        }
+        if (Input.acceleration.x < -.15f)
+        {
+            m_rb.AddTorque(transform.forward * m_rotateTorque * -1f * m_invertVariable);
+        }
+        Debug.Log(Input.acceleration);
 
         activeEngines?.Invoke();
     }
@@ -175,7 +198,7 @@ public class MovementController : MonoBehaviour
         activeEngines -= RRotate;
     }
 
-    void PcInputHandler()
+    private void PcInputHandler()
     {
         if (Input.GetKeyDown(KeyCode.W))
         {
