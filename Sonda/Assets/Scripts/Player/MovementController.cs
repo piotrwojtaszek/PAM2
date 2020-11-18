@@ -43,16 +43,9 @@ public class MovementController : MonoBehaviour
         m_rb.AddTorque(transform.up * m_rotateTorque * 12f, ForceMode.Impulse);*/
     }
 
-    private void Start()
-    {
-
-    }
-
     // Update is called once per frame
     private void Update()
     {
-        PcInputHandler();
-
         m_rb.angularVelocity = new Vector3(Mathf.Round(m_rb.angularVelocity.x * 1000) / 1000f, Mathf.Round(m_rb.angularVelocity.y * 1000) / 1000f, Mathf.Round(m_rb.angularVelocity.z * 1000) / 1000f);
         //Debug.Log("x:" + m_rb.angularVelocity.x + "     y:" + m_rb.angularVelocity.y + "    z:" + m_rb.angularVelocity.z + "     RotatationSpeed:" + m_rb.angularVelocity.magnitude + "  velocity:" + m_rb.velocity.magnitude);
 
@@ -60,10 +53,12 @@ public class MovementController : MonoBehaviour
         vertical = joystick.Vertical;
 
         //vertical movement
-        m_rb.AddTorque(transform.right * m_verticalTorque * vertical * m_invertVariable);
+        if (vertical > 0.1f || vertical < -0.1f)
+            m_rb.AddTorque(transform.right * m_verticalTorque * vertical * m_invertVariable);
 
         //vertical movement
-        m_rb.AddTorque(transform.up * m_horizontalTorque * horizontal * -1f * m_invertVariable);
+        if (horizontal > 0.1f || horizontal < -0.1f)
+            m_rb.AddTorque(transform.up * m_horizontalTorque * horizontal * -1f * m_invertVariable);
 
         if (Input.acceleration.x > .15f)
         {
@@ -73,7 +68,6 @@ public class MovementController : MonoBehaviour
         {
             m_rb.AddTorque(transform.forward * m_rotateTorque * -1f * m_invertVariable);
         }
-        Debug.Log(Input.acceleration);
 
         activeEngines?.Invoke();
     }
@@ -100,35 +94,6 @@ public class MovementController : MonoBehaviour
             m_rb.velocity = Vector3.ClampMagnitude(m_rb.velocity, 5.49f);
     }
 
-    private void Forward()
-    {
-        m_rb.AddTorque(transform.right * m_verticalTorque * 1f * m_invertVariable);
-    }
-
-    private void Back()
-    {
-        m_rb.AddTorque(transform.right * m_verticalTorque * -1f * m_invertVariable);
-    }
-
-    private void Right()
-    {
-        m_rb.AddTorque(transform.up * m_horizontalTorque * -1f * m_invertVariable);
-    }
-    private void Left()
-    {
-        m_rb.AddTorque(transform.up * m_horizontalTorque * 1f * m_invertVariable);
-    }
-
-    private void LRotate()
-    {
-        m_rb.AddTorque(transform.forward * m_rotateTorque * 1f * m_invertVariable);
-    }
-
-    private void RRotate()
-    {
-        m_rb.AddTorque(transform.forward * m_rotateTorque * -1f * m_invertVariable);
-    }
-
     public void EngineDown()
     {
         activeEngines += Engine;
@@ -138,123 +103,4 @@ public class MovementController : MonoBehaviour
         activeEngines -= Engine;
     }
 
-    public void FowardDown()
-    {
-        activeEngines += Forward;
-    }
-
-    public void ForwardUp()
-    {
-        activeEngines -= Forward;
-    }
-
-    public void BackDown()
-    {
-        activeEngines += Back;
-    }
-
-    public void BackUp()
-    {
-        activeEngines -= Back;
-    }
-
-    public void RightDown()
-    {
-        activeEngines += Right;
-    }
-
-    public void RightUp()
-    {
-        activeEngines -= Right;
-    }
-
-    public void LeftDown()
-    {
-        activeEngines += Left;
-    }
-
-    public void LeftUp()
-    {
-        activeEngines -= Left;
-    }
-
-    public void RightRotateDown()
-    {
-        activeEngines += LRotate;
-    }
-
-    public void RightRotateUp()
-    {
-        activeEngines -= LRotate;
-    }
-
-    public void LeftRotateDown()
-    {
-        activeEngines += RRotate;
-    }
-
-    public void LeftRotateUp()
-    {
-        activeEngines -= RRotate;
-    }
-
-    private void PcInputHandler()
-    {
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            FowardDown();
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            BackDown();
-        }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            LeftDown();
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            RightDown();
-        }
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            LeftRotateDown();
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            RightRotateDown();
-        }
-        if (Input.GetKeyUp(KeyCode.W))
-        {
-            ForwardUp();
-        }
-        if (Input.GetKeyUp(KeyCode.S))
-        {
-            BackUp();
-        }
-        if (Input.GetKeyUp(KeyCode.A))
-        {
-            LeftUp();
-        }
-        if (Input.GetKeyUp(KeyCode.D))
-        {
-            RightUp();
-        }
-        if (Input.GetKeyUp(KeyCode.Q))
-        {
-            LeftRotateUp();
-        }
-        if (Input.GetKeyUp(KeyCode.E))
-        {
-            RightRotateUp();
-        }
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            EngineDown();
-        }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            EngineUp();
-        }
-    }
 }

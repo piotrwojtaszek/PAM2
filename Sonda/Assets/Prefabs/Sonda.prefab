@@ -53,13 +53,7 @@ MonoBehaviour:
   m_particlePrefab: {fileID: 9108675801385934811, guid: 994c080a6ca17f14ca8c9c33842321a8,
     type: 3}
   m_movement: {fileID: 7787244958541230590}
-  m_mainEngine: {fileID: 7815475155246202736}
-  m_LeftEngine: {fileID: 2909762542212582259}
-  m_RightEngine: {fileID: 201566241609372068}
-  m_UpEngine: {fileID: 2598899057982410192}
-  m_DownEngine: {fileID: 6273187292212671307}
-  m_R_LeftEngine: {fileID: 4975865467529581985}
-  m_R_RightEngine: {fileID: 5702869645323164308}
+  m_active: 0
 --- !u!1 &1911336234605065786
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,6 +590,7 @@ GameObject:
   - component: {fileID: 7787244958541230584}
   - component: {fileID: 7787244958541230591}
   - component: {fileID: 7787244958541230590}
+  - component: {fileID: 678962077179216886}
   m_Layer: 8
   m_Name: Sonda
   m_TagString: Player
@@ -653,7 +648,20 @@ MonoBehaviour:
   m_horizontalTorque: 4
   m_rotateTorque: 7
   m_mainEngine: 5
+  joystick: {fileID: 0}
   m_invertControlls: 0
+--- !u!114 &678962077179216886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7787244958541230585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ecc283fbdc8ea548861012d67e0edab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7787244958579840837
 GameObject:
   m_ObjectHideFlags: 0
