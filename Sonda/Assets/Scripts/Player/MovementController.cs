@@ -54,7 +54,7 @@ public class MovementController : MonoBehaviour
 
         //vertical movement
         if (vertical > 0.1f || vertical < -0.1f)
-            m_rb.AddTorque(transform.right * m_verticalTorque * vertical * m_invertVariable);
+            m_rb.AddTorque(transform.right * m_verticalTorque * .25f * vertical * m_invertVariable);
 
         //vertical movement
         if (horizontal > 0.1f || horizontal < -0.1f)
@@ -62,11 +62,11 @@ public class MovementController : MonoBehaviour
 
         if (Input.acceleration.x > .15f)
         {
-            m_rb.AddTorque(transform.forward * m_rotateTorque * 1f * m_invertVariable);
+            m_rb.AddTorque(transform.forward * m_rotateTorque * -1f);
         }
         if (Input.acceleration.x < -.15f)
         {
-            m_rb.AddTorque(transform.forward * m_rotateTorque * -1f * m_invertVariable);
+            m_rb.AddTorque(transform.forward * m_rotateTorque * 1f);
         }
 
         activeEngines?.Invoke();
