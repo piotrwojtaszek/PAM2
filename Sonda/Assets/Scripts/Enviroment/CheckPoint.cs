@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CheckPoint : MonoBehaviour
 {
@@ -13,6 +11,7 @@ public class CheckPoint : MonoBehaviour
     private void Start()
     {
         RandomRotateAxies();
+
     }
     private void Update()
     {
@@ -22,6 +21,7 @@ public class CheckPoint : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            GameManager.instance.points++;
             UICanvas.instance.CreatePanel(prefab, UICanvas.instance.m_popup);
             player = other.transform;
             LeanTween.scale(gameObject, Vector3.zero, .5f).setEase(curve).setOnComplete(DestroyMe);

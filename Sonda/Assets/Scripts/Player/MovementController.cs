@@ -60,11 +60,13 @@ public class MovementController : MonoBehaviour
         if (horizontal > 0.15f || horizontal < -0.15f)
             m_rb.AddTorque(transform.up * m_horizontalTorque * horizontal * -1f * m_invertVariable);
 
-        if (Input.acceleration.x > .15f)
+        float accelerationX = Input.acceleration.x;
+        accelerationX = Mathf.Clamp(accelerationX, -.5f, .5f);
+        if (accelerationX > .15f)
         {
             m_rb.AddTorque(transform.forward * m_rotateTorque * -1f);
         }
-        if (Input.acceleration.x < -.15f)
+        if (accelerationX < -.15f)
         {
             m_rb.AddTorque(transform.forward * m_rotateTorque * 1f);
         }
