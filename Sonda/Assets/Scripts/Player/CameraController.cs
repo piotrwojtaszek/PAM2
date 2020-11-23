@@ -8,23 +8,19 @@ public class CameraController : MonoBehaviour
     private CinemachineFreeLook m_freeLook;
     [SerializeField]
     private CinemachineVirtualCamera m_followCamera;
-    private Vector2 firstpoint;
-    private float xAngTemp;
-    [SerializeField]
-    private float yAngTemp;
-    private Vector2 secondpoint;
     private float xAngle;
-    private float yAngle;
+    public float yAngle;
     public Vector2 m_Speed;
-    public bool m_moving = false;
-    private float m_idleTime = 0f;
+    public Joystick cameraJoystick;
+    public RectTransform moveJoystick;
+    private float horizontal;
+    private float vertical;
+    public bool m_moving = true;
 
     // Start is called before the first frame update
     private void Awake()
     {
         m_freeLook = GetComponent<CinemachineFreeLook>();
-        //m_freeLook.m_YAxis.Value = 0.8f;
-        //m_freeLook.m_XAxis.Value = 0.8f;
         xAngle = 0.0f;
         yAngle = m_freeLook.m_YAxis.Value;
         m_freeLook.Priority = 100;
@@ -33,52 +29,35 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Input.touchCount > 0 && m_moving)
+        horizontal = cameraJoystick.Horizontal;
+        vertical = cameraJoystick.Vertical;
+
+        if (m_moving && (horizontal != 0 || vertical != 0f))
         {
-            if (Input.GetTouch(0).phase == TouchPhase.Began)
-            {
-                firstpoint = Input.GetTouch(0).position;
-                xAngTemp = xAngle;
-                yAngTemp = yAngle;
-            }
-
-            if (Input.GetTouch(0).phase == TouchPhase.Moved)
-            {
-                secondpoint = Input.GetTouch(0).position;
-                //Mainly, about rotate camera. For example, for Screen.width rotate on 180 degree
-                xAngle = xAngTemp + (secondpoint.x - firstpoint.x) / Screen.width * m_Speed.x;
-                yAngle = yAngTemp - (secondpoint.y - firstpoint.y) / Screen.height * m_Speed.y;
-                //Rotate camera
-                //Debug.Log(yAngle + "  x:" + xAngle);
-                m_freeLook.m_YAxis.Value = yAngle;
-                m_freeLook.m_XAxis.Value = xAngle;
-                xAngTemp -= xAngle;
-
-
-            }
-            else
-            {
-                //m_freeLook.m_XAxis.Value = 0f;
-
-                //m_idleTime += Time.deltaTime;
-            }
+            xAngle = horizontal;
+            yAngle += vertical / 3000f * m_Speed.y;
+            m_freeLook.m_YAxis.Value = yAngle;
+            m_freeLook.m_XAxis.Value = xAngle;
+            yAngle = Mathf.Clamp(yAngle, 0f, 1f);
         }
-        if (m_moving)
-        {
-            m_freeLook.Priority = 100;
-            m_followCamera.Priority = 1;
-        }
-        else
-        {
-            m_freeLook.Priority = 1;
-            m_followCamera.Priority = 100;
-        }
-        yAngTemp = Mathf.Clamp(yAngTemp, 0f, 1f);
-
     }
 
     public void CameraMode()
     {
         m_moving = !m_moving;
+        if (m_moving)
+        {
+            m_freeLook.Priority = 100;
+            cameraJoystick.gameObject.SetActive(m_moving);
+            moveJoystick.sizeDelta = new Vector2(980, 980);
+            m_followCamera.Priority = 1;
+        }
+        else
+        {
+            cameraJoystick.gameObject.SetActive(m_moving);
+            moveJoystick.sizeDelta = new Vector2(1920, 980);
+            m_freeLook.Priority = 1;
+            m_followCamera.Priority = 100;
+        }
     }
 }

@@ -53,11 +53,11 @@ public class MovementController : MonoBehaviour
         vertical = joystick.Vertical;
 
         //vertical movement
-        if (vertical > 0.1f || vertical < -0.1f)
+        if (vertical > 0.15f || vertical < -0.15f)
             m_rb.AddTorque(transform.right * m_verticalTorque * .25f * vertical * m_invertVariable);
 
         //vertical movement
-        if (horizontal > 0.1f || horizontal < -0.1f)
+        if (horizontal > 0.15f || horizontal < -0.15f)
             m_rb.AddTorque(transform.up * m_horizontalTorque * horizontal * -1f * m_invertVariable);
 
         if (Input.acceleration.x > .15f)
