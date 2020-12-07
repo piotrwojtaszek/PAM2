@@ -9,6 +9,7 @@ public class UISpeed : MonoBehaviour
     public Rigidbody rb;
     private void Update()
     {
-        image.fillAmount = rb.velocity.magnitude / 5.5f;
+        if (rb != null)
+            image.fillAmount = rb.velocity.magnitude / 5.5f;
     }
 }

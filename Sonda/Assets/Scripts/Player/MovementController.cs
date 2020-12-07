@@ -46,6 +46,7 @@ public class MovementController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        // nie wiem po co to ale wole nie tykać xd
         m_rb.angularVelocity = new Vector3(Mathf.Round(m_rb.angularVelocity.x * 1000) / 1000f, Mathf.Round(m_rb.angularVelocity.y * 1000) / 1000f, Mathf.Round(m_rb.angularVelocity.z * 1000) / 1000f);
         //Debug.Log("x:" + m_rb.angularVelocity.x + "     y:" + m_rb.angularVelocity.y + "    z:" + m_rb.angularVelocity.z + "     RotatationSpeed:" + m_rb.angularVelocity.magnitude + "  velocity:" + m_rb.velocity.magnitude);
 
@@ -64,11 +65,11 @@ public class MovementController : MonoBehaviour
         accelerationX = Mathf.Clamp(accelerationX, -.5f, .5f);
         if (accelerationX > .15f)
         {
-            m_rb.AddTorque(transform.forward * m_rotateTorque * -1f);
+            m_rb.AddTorque(transform.forward * accelerationX * m_rotateTorque * -1f);
         }
         if (accelerationX < -.15f)
         {
-            m_rb.AddTorque(transform.forward * m_rotateTorque * 1f);
+            m_rb.AddTorque(transform.forward * m_rotateTorque * accelerationX * -1f);
         }
 
         activeEngines?.Invoke();

@@ -17,6 +17,7 @@ public class PlayerPointFollower : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.position = m_player.position+m_offset;
+        if (m_player)
+            transform.position = m_player.position + m_offset;
     }
 }
