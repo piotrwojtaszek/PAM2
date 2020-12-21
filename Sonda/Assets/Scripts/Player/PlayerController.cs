@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
 
     void KillMe()
     {
+        GameManager.instance.Respawn();
         Debug.LogWarning("KILL ME");
     }
 }

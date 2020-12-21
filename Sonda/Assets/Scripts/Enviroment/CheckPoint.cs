@@ -21,6 +21,7 @@ public class CheckPoint : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            GetComponent<Collider>().enabled = false;
             GameManager.instance.points++;
             UICanvas.instance.CreatePanel(prefab, UICanvas.instance.m_popup);
             player = other.transform;

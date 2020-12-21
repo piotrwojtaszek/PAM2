@@ -5008,7 +5008,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   prefab: {fileID: 6354522918247566539, guid: db6ba145d6f1dff408635b3e0920532e, type: 3}
-  particle: {fileID: 6134838351598186400, guid: 93562ab14a38d30499358cca8b09f32a,
+  particle: {fileID: 6134838351598186400, guid: 8ca817cce913fb041bf2737dee6397e3,
     type: 3}
   rotateSpeed: 50
 --- !u!135 &6083266256120998098
