@@ -5382,8 +5382,8 @@ Rigidbody:
   m_GameObject: {fileID: 7787244958541230585}
   serializedVersion: 2
   m_Mass: 10
-  m_Drag: 0.1
-  m_AngularDrag: 1.8
+  m_Drag: 0.9
+  m_AngularDrag: 2
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 1
@@ -5401,10 +5401,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b702c79c10f27bb44915160ac3386695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_verticalTorque: 3
-  m_horizontalTorque: 6
-  m_rotateTorque: 8
-  m_mainEngine: 6
+  m_verticalTorque: 4
+  m_horizontalTorque: 10
+  m_rotateTorque: 9
+  m_mainEngine: 20
   joystick: {fileID: 2087879697202280193}
   m_invertControlls: 1
 --- !u!114 &678962077179216886
@@ -5608,6 +5608,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7787244958541230584}
     m_Modifications:
+    - target: {fileID: 753445613, guid: d17446b302a3c4947a88d83a0afce161, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 753445614, guid: d17446b302a3c4947a88d83a0afce161, type: 3}
       propertyPath: plyer
       value: 
@@ -5616,9 +5620,19 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: -1144
       objectReference: {fileID: 0}
+    - target: {fileID: 1841533243435086501, guid: d17446b302a3c4947a88d83a0afce161,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2241932472529370664, guid: d17446b302a3c4947a88d83a0afce161,
         type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2993207495228163305, guid: d17446b302a3c4947a88d83a0afce161,
+        type: 3}
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3462960159201421310, guid: d17446b302a3c4947a88d83a0afce161,
@@ -5626,6 +5640,16 @@ PrefabInstance:
       propertyPath: rb
       value: 
       objectReference: {fileID: 7787244958541230591}
+    - target: {fileID: 6425192017384357335, guid: d17446b302a3c4947a88d83a0afce161,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6425192017839154541, guid: d17446b302a3c4947a88d83a0afce161,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6425192018023064860, guid: d17446b302a3c4947a88d83a0afce161,
         type: 3}
       propertyPath: m_LocalPosition.x

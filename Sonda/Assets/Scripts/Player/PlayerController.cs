@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public static PlayerController instance;
     public float health = 0f;
     public float maxHealth = 200f;
+    bool destroyed = false;
     private void Awake()
     {
         if(instance==null)
@@ -23,13 +24,18 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
-        if (health <= 0f)
+        if (health <= 0f&& destroyed==false)
+        {
+
+            destroyed = true;
             KillMe();
+        }
+            
     }
 
     void KillMe()
     {
-        GameManager.instance.Respawn();
+        GameManager.instance.CallDeadMenu();
         Debug.LogWarning("KILL ME");
     }
 }

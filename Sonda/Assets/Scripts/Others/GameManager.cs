@@ -19,11 +19,23 @@ public class GameManager : MonoBehaviour
 
     public void Respawn()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void Complete()
     {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(0);
+    }
+    public void CallDeadMenu()
+    {
+        GameObject deadMenu = Resources.Load<GameObject>("DeadMenu");
+        Instantiate(deadMenu);
+    }
+    public void BackToMenu()
+    {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(0);
     }
 }

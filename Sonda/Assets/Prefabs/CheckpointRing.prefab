@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4759927916612246629}
   - component: {fileID: 4083778761516480859}
   - component: {fileID: 2452568047760827893}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4901,7 +4901,7 @@ GameObject:
   - component: {fileID: 134681165128892661}
   - component: {fileID: 8202816834243327355}
   - component: {fileID: 6083266256120998098}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CheckpointRing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5035,7 +5035,7 @@ GameObject:
   - component: {fileID: 166860552154082786}
   - component: {fileID: 2358003735338082607}
   - component: {fileID: 7745149689697233003}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Particle System (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
