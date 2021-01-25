@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2169,7 +2169,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 595570621}
-  m_LocalRotation: {x: 0.02045121, y: 0.9534289, z: 0.06643569, w: -0.29349852}
+  m_LocalRotation: {x: 0.020451209, y: 0.9534289, z: 0.06643569, w: -0.2934985}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2430,12 +2430,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1267014609046240154, guid: 951881e0e62bfbc4e99409bc3a7960a0,
     type: 3}
   m_PrefabInstance: {fileID: 639742628}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &655970941 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2087879697202280192, guid: daa8f479445443848804ed6f7e9b8a05,
-    type: 3}
-  m_PrefabInstance: {fileID: 7787244958246509323}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &662620335
 GameObject:
@@ -6359,7 +6353,7 @@ MonoBehaviour:
   yAngle: 0
   m_Speed: {x: 50, y: 10}
   cameraJoystick: {fileID: 912181639}
-  moveJoystick: {fileID: 655970941}
+  moveJoystick: {fileID: 7787244958246509324}
   m_moving: 1
 --- !u!4 &1918222618 stripped
 Transform:
@@ -7226,6 +7220,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daa8f479445443848804ed6f7e9b8a05, type: 3}
+--- !u!1 &7787244958246509324 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2087879697202280207, guid: daa8f479445443848804ed6f7e9b8a05,
+    type: 3}
+  m_PrefabInstance: {fileID: 7787244958246509323}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8018674931523847004 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4372720069815549953, guid: 8842c06ba019a444aa6fd80fb9611186,

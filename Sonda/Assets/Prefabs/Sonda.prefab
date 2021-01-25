@@ -5401,10 +5401,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b702c79c10f27bb44915160ac3386695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_verticalTorque: 4
-  m_horizontalTorque: 10
+  m_verticalTorque: 5
+  m_horizontalTorque: 12
   m_rotateTorque: 9
-  m_mainEngine: 20
+  m_mainEngine: 4000
   joystick: {fileID: 2087879697202280193}
   m_invertControlls: 1
 --- !u!114 &678962077179216886
@@ -5620,6 +5620,11 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: -1144
       objectReference: {fileID: 0}
+    - target: {fileID: 1552444763547802568, guid: d17446b302a3c4947a88d83a0afce161,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1920
+      objectReference: {fileID: 0}
     - target: {fileID: 1841533243435086501, guid: d17446b302a3c4947a88d83a0afce161,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -5634,6 +5639,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3009151786225842926, guid: d17446b302a3c4947a88d83a0afce161,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1920
       objectReference: {fileID: 0}
     - target: {fileID: 3462960159201421310, guid: d17446b302a3c4947a88d83a0afce161,
         type: 3}

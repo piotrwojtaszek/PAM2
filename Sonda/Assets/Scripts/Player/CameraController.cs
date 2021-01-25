@@ -12,7 +12,7 @@ public class CameraController : MonoBehaviour
     public float yAngle;
     public Vector2 m_Speed;
     public Joystick cameraJoystick;
-    public RectTransform moveJoystick;
+    public GameObject moveJoystick;
     private float horizontal;
     private float vertical;
     public bool m_moving = true;
@@ -49,13 +49,13 @@ public class CameraController : MonoBehaviour
         {
             m_freeLook.Priority = 100;
             cameraJoystick.gameObject.SetActive(m_moving);
-            moveJoystick.sizeDelta = new Vector2(980, 980);
+            moveJoystick.SetActive(!m_moving);
             m_followCamera.Priority = 1;
         }
         else
         {
             cameraJoystick.gameObject.SetActive(m_moving);
-            moveJoystick.sizeDelta = new Vector2(1920, 980);
+            moveJoystick.SetActive(!m_moving);
             m_freeLook.Priority = 1;
             m_followCamera.Priority = 100;
         }

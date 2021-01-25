@@ -26,5 +26,5 @@ Material:
     - _Scale: 1
     - _Seed: 100
     m_Colors:
-    - _Color: {r: 0.7176471, g: 0.42091885, b: 0, a: 0}
+    - _Color: {r: 1, g: 0.58469945, b: 0, a: 0}
     - _Scale: {r: 4, g: 4, b: 4, a: 4}

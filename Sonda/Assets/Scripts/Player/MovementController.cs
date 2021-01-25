@@ -86,7 +86,7 @@ public class MovementController : MonoBehaviour
     private void Engine()//osiagniecie max zniszczy statek
     {
         if (m_rb.velocity.magnitude < 5.5f)
-            m_rb.AddForce(transform.forward * m_mainEngine);
+            m_rb.AddForce(transform.forward * m_mainEngine*Time.deltaTime);
         else
             LimitVelocity();
     }
