@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -4448,6 +4448,7 @@ GameObject:
   m_Component:
   - component: {fileID: 864226027}
   - component: {fileID: 864226034}
+  - component: {fileID: 864226035}
   - component: {fileID: 864226033}
   - component: {fileID: 864226032}
   - component: {fileID: 864226031}
@@ -4604,7 +4605,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 864226031}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 864226035}
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &864226033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4626,6 +4638,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 864226026}
   m_CullTransparentMesh: 0
+--- !u!114 &864226035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864226026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd4eff98d6d5ad49853780ba843aaf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &868293238
 GameObject:
   m_ObjectHideFlags: 0
