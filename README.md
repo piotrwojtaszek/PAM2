@@ -9,3 +9,5 @@ Krótka instrukcja:
 - Przycisk na dole ekranu służy do dodawania prędkości
 - Przechylanie telefonem na boki (jak kierownicą w samochodzie) ma wpływ na ruch sondy
 - Im mocniej się uderzy w meteor tym więcej życia stracimy
+
+Miłej gry :D
