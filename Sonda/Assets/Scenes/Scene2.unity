@@ -419,6 +419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawnPoint: {fileID: 376618689}
   maxPoints: 6
+  checkpoints: []
   points: 0
 --- !u!4 &219095431
 Transform:
@@ -2169,7 +2170,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 595570621}
-  m_LocalRotation: {x: 0.020451209, y: 0.9534289, z: 0.06643569, w: -0.2934985}
+  m_LocalRotation: {x: 0.02045121, y: 0.9534289, z: 0.06643569, w: -0.29349852}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2554,6 +2555,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &676102272 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7351180309522105118, guid: daa8f479445443848804ed6f7e9b8a05,
+    type: 3}
+  m_PrefabInstance: {fileID: 7787244958246509323}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a47f546fc70ec8428172694e78e4288, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &684494583 stripped
@@ -3166,18 +3179,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1120532083}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &912181639 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2355488533787596327, guid: daa8f479445443848804ed6f7e9b8a05,
-    type: 3}
-  m_PrefabInstance: {fileID: 7787244958246509323}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba0d0e7a039f526499c356a3c5cd6d3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &953159708
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3979,6 +3980,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 438c3c688eff45c4e981dae6bc07bb06, type: 3}
+--- !u!1 &1158402976 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2225849273761794588, guid: daa8f479445443848804ed6f7e9b8a05,
+    type: 3}
+  m_PrefabInstance: {fileID: 7787244958246509323}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1160566588
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6352,8 +6359,8 @@ MonoBehaviour:
   m_followCamera: {fileID: 1953673968}
   yAngle: 0
   m_Speed: {x: 50, y: 10}
-  cameraJoystick: {fileID: 912181639}
-  moveJoystick: {fileID: 7787244958246509324}
+  cameraJoystick: {fileID: 676102272}
+  moveJoystick: {fileID: 1158402976}
   m_moving: 1
 --- !u!4 &1918222618 stripped
 Transform:
@@ -7220,12 +7227,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daa8f479445443848804ed6f7e9b8a05, type: 3}
---- !u!1 &7787244958246509324 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2087879697202280207, guid: daa8f479445443848804ed6f7e9b8a05,
-    type: 3}
-  m_PrefabInstance: {fileID: 7787244958246509323}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8018674931523847004 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4372720069815549953, guid: 8842c06ba019a444aa6fd80fb9611186,

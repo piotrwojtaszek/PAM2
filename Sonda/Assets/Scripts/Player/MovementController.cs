@@ -55,21 +55,29 @@ public class MovementController : MonoBehaviour
 
         //vertical movement
         if (vertical > 0.15f || vertical < -0.15f)
-            m_rb.AddTorque(transform.right * m_verticalTorque * .25f * vertical * m_invertVariable);
+            m_rb.AddTorque(transform.right * m_verticalTorque * .25f * vertical * m_invertVariable * Time.deltaTime);
 
         //vertical movement
         if (horizontal > 0.15f || horizontal < -0.15f)
-            m_rb.AddTorque(transform.up * m_horizontalTorque * horizontal * -1f * m_invertVariable);
+            m_rb.AddTorque(transform.up * m_horizontalTorque * horizontal * -1f * m_invertVariable * Time.deltaTime);
 
         float accelerationX = Input.acceleration.x;
+        if(Input.GetKey(KeyCode.Q))
+        {
+            accelerationX = -.5f;
+        }
+        if (Input.GetKey(KeyCode.E))
+        {
+            accelerationX = .5f;
+        }
         accelerationX = Mathf.Clamp(accelerationX, -.5f, .5f);
         if (accelerationX > .15f)
         {
-            m_rb.AddTorque(transform.forward * accelerationX * m_rotateTorque * -1f);
+            m_rb.AddTorque(transform.forward * accelerationX * m_rotateTorque * -1f * Time.deltaTime);
         }
         if (accelerationX < -.15f)
         {
-            m_rb.AddTorque(transform.forward * m_rotateTorque * accelerationX * -1f);
+            m_rb.AddTorque(transform.forward * m_rotateTorque * accelerationX * -1f*Time.deltaTime);
         }
 
         activeEngines?.Invoke();

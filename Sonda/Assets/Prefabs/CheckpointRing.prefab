@@ -4903,7 +4903,7 @@ GameObject:
   - component: {fileID: 6083266256120998098}
   m_Layer: 9
   m_Name: CheckpointRing
-  m_TagString: Untagged
+  m_TagString: CheckPoints
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

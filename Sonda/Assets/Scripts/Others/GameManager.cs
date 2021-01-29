@@ -8,11 +8,18 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public Transform respawnPoint;
     public int maxPoints = 0;
+    public List<Transform> checkpoints;
     public int points = 0;
     private void Awake()
     {
         instance = this;
         points = 0;
+        GameObject[] checkpointsArr = GameObject.FindGameObjectsWithTag("CheckPoints");
+        foreach(GameObject obj in checkpointsArr)
+        {
+            checkpoints.Add(obj.transform);
+        }
+        maxPoints = checkpoints.Count-1;
     }
 
 

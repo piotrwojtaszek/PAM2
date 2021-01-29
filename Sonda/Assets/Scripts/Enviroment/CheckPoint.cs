@@ -32,6 +32,7 @@ public class CheckPoint : MonoBehaviour
     private void DestroyMe()
     {
         Instantiate(particle, player);
+        GameManager.instance.checkpoints.Remove(this.gameObject.transform);
         Destroy(this.gameObject);
     }
     void RandomRotateAxies()
